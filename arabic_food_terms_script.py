@@ -66,6 +66,6 @@ for sent in text11:
     sum_vec11 = torch.mean(output11[0][0][1:-1], dim=0)
     sim = cosine(sum_vec.detach().to("cpu").numpy(), sum_vec11.detach().to("cpu").numpy())
     
-    if sim > 0.775:
+    if sim > 0.8:
         with open('output.txt', 'a', encoding='utf-8') as f:
             f.write(f"Sentence: {sent}; similarity = {sim}\n")
